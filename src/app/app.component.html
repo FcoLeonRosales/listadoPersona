@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="col-xs-12">
+    <h3>{{titulo}}</h3>
+  </div>
+  <hr>
+  <app-formulario
+  (personaCreada)="onPersonaAgregada($event)"
+  (desabilitado) ="existe"
+  ></app-formulario>
+  <hr>
+  <app-persona
+  *ngFor="let personaElemento of personas; let iElemento = index"
+  [persona]= "personaElemento"
+  [indice]= "iElemento"
+  ></app-persona> 
+</div>
